@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="cainiao_Servlet:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/cainiao_Servlet_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="cainiao_Servlet/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cainiao_Servlet" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

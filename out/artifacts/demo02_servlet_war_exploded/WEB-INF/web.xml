@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+<!--  哔哩哔哩  尚硅谷  -->
+    <servlet>
+        <servlet-name>userServlet</servlet-name>
+        <servlet-class>com.atguigu.servlet.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userServlet</servlet-name>
+        <url-pattern>/userServletsssaa</url-pattern>
+    </servlet-mapping>
+
+<!--  http://localhost:8080/demo02_servlet01/sss1  -->
+    <servlet>
+        <servlet-name>servlet1</servlet-name>
+        <servlet-class>com.atguigu.servlet.Servlet1Webxml</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servlet1</servlet-name>
+        <url-pattern>/sss1</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>

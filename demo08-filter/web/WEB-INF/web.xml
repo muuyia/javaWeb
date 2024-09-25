@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+<!--    https://www.bilibili.com/video/BV1UN411x7xe?p=108&spm_id_from=pageDriver&vd_source=14551025f000a7403c153e5a0e5f8140-->
+    <filter>
+        <filter-name>loggingFilter</filter-name>
+        <filter-class>com.atguigu.filters.LoggingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>loggingFilter</filter-name>
+<!--        <url-pattern></url-pattern>-->
+<!--        <servlet-name>servlet1</servlet-name>-->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+</web-app>
