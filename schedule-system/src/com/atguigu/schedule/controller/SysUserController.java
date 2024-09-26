@@ -16,6 +16,17 @@ import java.io.IOException;
 @WebServlet("/user/*")
 public class SysUserController extends BaseController {
 
+    private SysUserService userService = new SysUserServiceImpl();
+
+    protected void checkUsernameUsed(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("username");
+        SysUser sysUser = userService.findByUsername(username);
+        String info = "可用";
+        if(null != sysUser){
+            info = "已占用";
+        }
+        resp.getWriter().write(info);
+    }
 
     //登录功能问题：密码为空
     //https://www.bilibili.com/video/BV1UN411x7xe/?p=102&spm_id_from=pageDriver&vd_source=14551025f000a7403c153e5a0e5f8140
@@ -36,7 +47,7 @@ public class SysUserController extends BaseController {
         }
     }
 
-    private SysUserService userService = new SysUserServiceImpl();
+
 
     //https://www.bilibili.com/video/BV1UN411x7xe/?p=101&spm_id_from=pageDriver&vd_source=14551025f000a7403c153e5a0e5f8140
     protected void regist(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
