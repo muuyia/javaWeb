@@ -1,9 +1,13 @@
 package com.atguigu.schedule.controller;
 
+import com.atguigu.schedule.common.Result;
+import com.atguigu.schedule.common.ResultCodeEnum;
 import com.atguigu.schedule.pojo.SysUser;
 import com.atguigu.schedule.service.SysUserService;
 import com.atguigu.schedule.service.impl.SysUserServiceImpl;
 import com.atguigu.schedule.util.MD5Util;
+import com.atguigu.schedule.util.WebUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,11 +25,15 @@ public class SysUserController extends BaseController {
     protected void checkUsernameUsed(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         SysUser sysUser = userService.findByUsername(username);
-        String info = "可用";
+
+        Result result = Result.ok(null);
+
+
         if(null != sysUser){
-            info = "已占用";
+            result = Result.build(null, ResultCodeEnum.USERNAME_USED);
         }
-        resp.getWriter().write(info);
+        //将result对象转换成JSON串响应给客户端
+        WebUtil.writeJson(resp,result);
     }
 
     //登录功能问题：密码为空
