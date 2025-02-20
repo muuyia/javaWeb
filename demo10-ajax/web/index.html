@@ -11,12 +11,12 @@
             request.onreadystatechange=function(){
                 if(request.readyState == 4 && request.status == 200){
                     alert("后端响应了")
-                    console.log(request.responseText)
+                    console.log("responseTest:"+request.responseText)
                     //将信息放到指定位置
                     var inputEle = document.getElementById("message")
                     inputEle.value = request.responseText
 
-                    window.location.href="http://www.atguigu.com"
+                    // window.location.href="http://www.atguigu.com"
                 }
             }
             request.open("GET","/hello?username=zhangsan")

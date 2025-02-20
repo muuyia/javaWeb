@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class formGET extends HttpServlet {
+
+//http://localhost:8080/practiceServlet/formGETdemo?username=ssss&userPwd=dddd
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("Servlet  Success");

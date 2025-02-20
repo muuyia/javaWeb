@@ -14,5 +14,7 @@ public class HelloServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         resp.getWriter().write("hello:" + username);
+
+        System.out.println("Servlet");
     }
 }

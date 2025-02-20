@@ -2,3 +2,6 @@
 |:--------------|:-----------------------------:|-------------------:|----|
 | centered 文本居左 |      right-aligned 文本居中       | right-aligned 文本居右 |    |
 | formGET.html  | com.mhw.formDemo.formGET.java |           打印表单提交数据 |    |
+
+# 部署
+Application Context：/practiceServlet
