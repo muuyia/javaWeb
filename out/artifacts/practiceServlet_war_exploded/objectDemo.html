@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--     -->
+
+
+    <h1>获取对象字符串内容</h1>
+    <button type="button" onclick="getObjectStr()">getObjectStr</button>
+
+
+    <h1>对象字符串推送</h1>
+    <button type="button" onclick="getObjectStr()">pushObjectStr</button>
+
+<script>
+    function getObjectStr(){
+        let xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.onreadystatechange=function(){
+            if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
+
+                word = xmlHttpRequest.responseText;
+                console.log("http响应内容类型："+typeof(word));
+                console.log("http响应内容："+word);
+                wordO = JSON.parse(word);
+                console.log("转变后类型："+wordO)
+            }
+        }
+        xmlHttpRequest.open("GET","/practiceServlet/getObjectStr",false)
+        xmlHttpRequest.send();
+    }
+</script>
+
+</body>
+</html>

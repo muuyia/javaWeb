@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--  -->
+    <script>
+        console.log('11111')
+        var username = 'zhagnsan'
+        function invokeServlet(){
+            console.log('js调用')
+            var request = new XMLHttpRequest();
+            request.open("GET","http://localhost:8080/practiceServlet/invokeByJS")
+            request.send()
+            console.log("js success")
+        }
+    </script>
+    <button onclick="invokeServlet()">点击调用后台Servlet服务接口</button>
+
+</body>
+</html>

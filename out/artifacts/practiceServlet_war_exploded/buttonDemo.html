@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  http://localhost:8080/practiceServlet/formGET.html   -->
+
+<!--通过配置文件配置映射信息-->
+
+<h1>点击按钮访问Servlet</h1>
+<button type="button" onclick="buttonServletDemo()">getObjectStr</button>
+
+
+
+<script>
+    function buttonServletDemo(){
+        let xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.onreadystatechange=function(){
+            if(xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200){
+
+                responseContent = xmlHttpRequest.responseText;
+                console.log("响应内容："+responseContent)
+            }
+        }
+        xmlHttpRequest.open("GET","/practiceServlet/formGETdemo2",false)   //服用Servlet
+        xmlHttpRequest.send();
+    }
+</script>
+</body>
+</html>
